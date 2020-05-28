@@ -15,9 +15,13 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: golang:1.14-alpine
+    runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - name: Run tests
-      run: go test -v ./...
+      - name: Setup Go environment
+        uses: actions/setup-go@v2.0.3
+        with:
+          stable: true
+      - name: Run tests
+        run: go test -v ./...
