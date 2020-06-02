@@ -24,4 +24,4 @@ jobs:
         with:
           stable: true
       - name: Run tests
-        run: go test -v ./...
+        run: go test -v
